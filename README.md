@@ -1,2 +1,2 @@
 # Desafio-1-DIO
-desafio 1 da dio, melhorado com classes
+desafio conta bancaria, usando classes, refatorei de forma viavel para que pudesse usar contas e atender a maior parte de desafio, usando args e kwargs
