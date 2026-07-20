@@ -1,6 +1,6 @@
-from Transaction import Transaction
-from draw import Draw
-from Deposit import Deposit
+from Transactions.Transaction import Transaction
+from Transactions.draw import Draw
+from Transactions.Deposit import Deposit
 class Extract:
     def __init__(self) -> None:
         self.TransactionHistory = []

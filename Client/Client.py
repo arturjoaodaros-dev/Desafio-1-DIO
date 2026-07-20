@@ -1,9 +1,6 @@
+from Backend.Account import Account
 from random import randint
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from Backend.Account import Account
-
-
+from Transactions.Transaction import Transaction
 class Client:
     def __init__(self) -> None:
         self.adress = ""
@@ -17,10 +14,9 @@ class Client:
         account.AddClient(client, id)
         client.accounts[name] = account
 
-    def DoTransaction(self, account: Account, transaction: str):
+    def DoTransaction(self, account: Account, transaction: Transaction):
         if account in self.accounts:
-            if transaction.lower() is 'deposit':
-                ...
+            transaction.RegistryTransaction(account)
                 
 
 

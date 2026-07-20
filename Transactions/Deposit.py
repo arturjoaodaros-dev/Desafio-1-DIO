@@ -1,5 +1,5 @@
 from Backend.Account import Account
-from Transaction import Transaction
+from Transactions.Transaction import Transaction
 
 class Deposit(Transaction):
     def __init__(self, value, date) -> None:

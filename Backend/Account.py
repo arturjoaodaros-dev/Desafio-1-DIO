@@ -1,7 +1,5 @@
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from Client.Client import Client
-    from extract import Extract
+from Client.Client import Client
+from Transactions.extract import Extract
 
 
 class Account:
@@ -28,3 +26,5 @@ class Account:
     def deposit(self, valor: float):
         if valor > 0:
             self.currency += valor
+            return True
+        return False
