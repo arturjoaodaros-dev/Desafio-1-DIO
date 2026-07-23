@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from Backend.Account import Account
 from abc import ABC, abstractmethod
 from datetime import date

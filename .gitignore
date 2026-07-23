@@ -1,0 +1,6 @@
+Transactions/__pycache__/
+Client/__pycache__/
+Backend/__pycache__/
+*.pyc
+.venv
+.vscode
