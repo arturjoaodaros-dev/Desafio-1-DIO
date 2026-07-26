@@ -6,6 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 if TYPE_CHECKING:
     from Client.Client import Client
+    from ..Transactions.Deposit import Deposit
 
 class Account:
     def __init__(self) -> None:
@@ -28,7 +29,10 @@ class Account:
         return self._currency or 0
     @property
     def extract(self):
-        return self._extract.TransactionHistory or None
+        return self._extract
+    @property
+    def client(self):
+        return self._client or None
     
     def AddClient(self, client: Client):
         if self._client is None:

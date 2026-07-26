@@ -15,8 +15,9 @@ class CurrentAccount(Account):
 
 if __name__ == '__main__':
     acc = CurrentAccount()
-    client = Client()
+    client = Client('rua do rojão')
     client.AppendAccount(acc, 'Artur1')
-    client.DoTransaction(client.accounts['Artur1'], Deposit(90, 90))
+    client.DoTransaction(client.accounts['Artur1'], Deposit(90))
     print(client.accounts['Artur1'].currency)
     print(f"Limite: {client.accounts['Artur1'].limit}")
+    print(f"Limite de Saque: {client.accounts['Artur1'].DrawLimit}")
