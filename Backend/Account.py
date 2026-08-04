@@ -31,6 +31,9 @@ class Account:
     def extract(self):
         return self._extract
     @property
+    def Extract(self):
+        return self._extract.TransactionHistory
+    @property
     def client(self):
         return self._client or None
     

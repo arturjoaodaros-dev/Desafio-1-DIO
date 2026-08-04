@@ -4,6 +4,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from Backend.Account import Account
 from Transactions.Transaction import Transaction
+from decorators.log import log
 
 class Deposit(Transaction):
     def __init__(self, value) -> None:
@@ -11,4 +12,4 @@ class Deposit(Transaction):
     def RegistryTransaction(self, account: Account):
         i = account.deposit(self.value)
         if i:
-           account.extract.AddTransaction(Deposit(self.value) )
+           account.extract.AddTransaction(self)

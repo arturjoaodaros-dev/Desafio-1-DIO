@@ -10,8 +10,16 @@ class CurrentAccount(Account):
 
     def __init__(self) -> None:
         super().__init__()
-        self.limit = 0.0
-        self.DrawLimit = 0
+        self._limit = 1000.0
+        self._DrawLimit = 3
+
+    @property
+    def limit(self):
+        return self._limit or 0
+
+    @property
+    def DrawLimit(self):
+        return self._DrawLimit or 0
 
 if __name__ == '__main__':
     acc = CurrentAccount()
@@ -20,4 +28,6 @@ if __name__ == '__main__':
     client.DoTransaction(client.accounts['Artur1'], Deposit(90))
     print(client.accounts['Artur1'].currency)
     print(f"Limite: {client.accounts['Artur1'].limit}")
-    print(f"Limite de Saque: {client.accounts['Artur1'].DrawLimit}")
+    print(client.accounts['Artur1'].Extract)
+    for i in client.accounts['Artur1'].extract:
+        print(i)
