@@ -3,7 +3,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from random import randint
-from Transactions.Transaction import Transaction
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from Transactions.Transaction import Transaction
+    
+
 class Client:
     def __init__(self, adress: str) -> None:
         self._adress = adress
@@ -16,7 +21,7 @@ class Client:
         account.AddClient(self)
         self.accounts[name] = account
 
-    def DoTransaction(self, account: "Account", transaction: Transaction):
+    def DoTransaction(self, account: "Account", transaction: "Transaction"):
         if account in self.accounts.values():
             transaction.RegistryTransaction(account)
                 
